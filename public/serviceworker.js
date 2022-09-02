@@ -1,8 +1,8 @@
 var staticCacheName = "pwa-v" + new Date().getTime();
 var filesToCache = [
     '/offline',
-    '/css/app.css',
-    '/js/app.js',
+    'assets/css/product.css',
+    'assets/js/bootstrap.bundle.min.js',
     '/images/icons/icon-72x72.png',
     '/images/icons/icon-96x96.png',
     '/images/icons/icon-128x128.png',
@@ -23,6 +23,23 @@ self.addEventListener("install", event => {
             })
     )
 });
+
+// self.addEventListener("install", (event) => {
+//     console.log("Service Worker : Installed!")
+
+//     event.waitUntil(
+
+//         (async() => {
+//             try {
+//                 cache_obj = await caches.open(cache)
+//                 cache_obj.addAll(caching_files)
+//             }
+//             catch{
+//                 console.log("error occured while caching...")
+//             }
+//         })()
+//     )
+// } )
 
 // Clear cache on activate
 self.addEventListener('activate', event => {
